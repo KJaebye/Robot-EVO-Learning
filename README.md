@@ -8,7 +8,9 @@ Two level of difficulties task are provided:
 1. easy: training a bipedalwalker on flat.
 2. hard: training a bipedalwalker on rough terrain.
 
-## Build Image
+We have already provided the RL environment files, and built the most popular packages for RL. Torch version is torch==1.12.0.
+
+## Build Image from Dockerfile
 ```
 cd docker
 docker build -t 'evo-learning:bipedalwalker' . 
