@@ -1,14 +1,14 @@
 # ENV FILES for Course **Computational Intelligence and Robotics**
 ## Description
-This is an robot environment for course **Computational Intelligence and Robotics** directed by Prof. Huaping Liu at Tsinghua University.
+This repo provides robot learning environments for course **Computational Intelligence and Robotics** directed by Prof. Huaping Liu at Tsinghua University.
 
-The task is training a Bipedalwalker to learn control and evoluate its morph for better control.
+The task is training a Bipedalwalker to learn control and evolve its morph for better control.
 
-Two level of difficulties task are provided:
+Two difficulties of tasks are provided:
 1. easy: training a bipedalwalker on flat.
 2. hard: training a bipedalwalker on rough terrain.
 
-We have already provided the RL environment files, and built the most popular packages for RL. Torch version is torch==1.12.0.
+We have already provided the RL environment files, and built a common python env for RL. The torch version is 1.12.0.
 
 ## Build Image from Dockerfile
 ```
