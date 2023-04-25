@@ -25,6 +25,13 @@ docker run -it --name evo-learning -v ws:/root/ws --gpus=all -v /tmp/.x11-unix:/
 
 > Note: Replace the {image_id} with the **image_id** in the last step.
 
+## Entering Containner
+Entering containner using ssh with default passwd '123123':
+```
+ssh -Y root@0.0.0.0 -p 9022
+```
+> Note: It's necessary to use "-Y" option to allow X11 forwarding.
+
 ## Example
 We provide a gym like environment api:
 ```
