@@ -48,7 +48,17 @@ RUN apt-get install \
   vim \
   openssh-server \
   swig \
-  libpcre3-dev
+  libpcre3-dev \
+  libharfbuzz0b \
+  libpcre16-3 \
+  libxcb-keysyms1-dev libxcb-image0-dev \
+    libxcb-shm0-dev libxcb-icccm4-dev libxcb-sync0-dev libxcb-xfixes0-dev \
+    libxcb-shape0-dev libxcb-randr0-dev libxcb-render-util0-dev \
+    libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxfixes-dev \
+    libxi-dev libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev x11vnc \
+    xauth build-essential mesa-common-dev libglu1-mesa-dev libxkbcommon-dev \
+    libxcb-xkb-dev libxslt1-dev libxkbcommon-x11-0
+
 
 
 # SSH config
@@ -73,7 +83,7 @@ RUN echo '# startup run \n\
   fi' >> /root/.bashrc
 
 # install Torch
-RUN pip install torch==1.12.0+cu113 torchvision==0.13.0+cu113 torchaudio==0.12.0 --extra-index-url https://download.pytorch.org/whl/cu113
+# RUN pip install torch==1.12.0+cu113 torchvision==0.13.0+cu113 torchaudio==0.12.0 --extra-index-url https://download.pytorch.org/whl/cu113
 
 # EMAT python env.
 WORKDIR /root/
