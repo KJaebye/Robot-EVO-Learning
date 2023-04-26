@@ -19,7 +19,7 @@ Get the **image_id**.
 
 ## Run Container
 ```
-docker run -it --name evo-learning -v ws:/root/ws --gpus=all -v /tmp/.x11-unix:/tmp/.x11-unix -e GDK_SCALE -e GDK_DPI_SCALE -p 9022:22 {image_id} /bin/bash
+docker run -it --name evo-learning -v ws:/root/ws --gpus=all -v /tmp/.x11-unix:/tmp/.x11-unix -e DISPLAY=$DISPLAY -e GDK_SCALE -e GDK_DPI_SCALE -p 9022:22 {image_id} /bin/bash
 ```
 > Important: The 'ws' is the docker volume where you should clone and put this repo, so that you can edit code inside the container.
 
@@ -55,8 +55,10 @@ AugmentBipedalWalker
 AugmentBipedalWalkerSmallLegs
 AugmentBipedalWalkerHardcore
 AugmentBipedalWalkerHardcoreSmallLegs
+
+AugmentAnt
 ```
-Run main.py to create a bipedalwalker environment with random morph and random control policy.
+Run main.py to create a bipedalwalker or ant environment with random morph and random control policy.
 ```
 python main.py --env ENVNAME
 ```
