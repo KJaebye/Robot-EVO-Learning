@@ -2,13 +2,7 @@
 # @ author: Kangyao Huang
 # @ date: Apirl.21.2023
 
-# If you want to use a different version of CUDA, view the available
-# images here: https://hub.docker.com/r/nvidia/cuda
-# Note:
-#   - Jax currently supports CUDA versions up to 11.3.
-#   - Tensorflow required CUDA versions after 11.2.
-ARG cuda_docker_tag="11.2.2-cudnn8-devel-ubuntu20.04"
-FROM nvidia/cuda:${cuda_docker_tag}
+FROM nvidia/opengl:1.0-glvnd-runtime-ubuntu20.04 as glvnd
 
 RUN sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
 RUN apt-get update
@@ -81,9 +75,6 @@ RUN echo '# startup run \n\
   if [ -f /root/start_ssh.sh ]; then \n\
       /root/start_ssh.sh \n\
   fi' >> /root/.bashrc
-
-# install Torch
-# RUN pip install torch==1.12.0+cu113 torchvision==0.13.0+cu113 torchaudio==0.12.0 --extra-index-url https://download.pytorch.org/whl/cu113
 
 # EMAT python env.
 WORKDIR /root/

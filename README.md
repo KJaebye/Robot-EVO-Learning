@@ -2,24 +2,22 @@
 ## Description
 This repo provides robot learning environments for course **Computational Intelligence and Robotics** directed by Prof. Huaping Liu at Tsinghua University.
 
-The task is training a Bipedalwalker to learn control and evolve its morph for better control.
+The task is training a (Bipedalwalker / Ant) to learn control and evolve its morph for better control.
 
 Two difficulties of tasks are provided:
-1. easy: training a bipedalwalker on flat.
-2. hard: training a bipedalwalker on rough terrain.
-
-We have already provided the RL environment files, and built a common python env for RL. The torch version is 1.12.0.
+1. easy: training a (Bipedalwalker / Ant) on flat.
+2. hard: training a (Bipedalwalker / Ant) on rough terrain.
 
 ## Build Image from Dockerfile
 ```
 cd docker
-docker build -t 'evo-learning:bipedalwalker' . 
+docker build -t 'evo-learning:v1' . 
 ```
 Get the **image_id**.
 
 ## Run Container
 ```
-docker run -it --name evo-learning -v ws:/root/ws --gpus=all -v /tmp/.x11-unix:/tmp/.x11-unix -e DISPLAY=$DISPLAY -e GDK_SCALE -e GDK_DPI_SCALE -p 9022:22 {image_id} /bin/bash
+docker run -it --name evo-learning -v ws:/root/ws -v /tmp/.x11-unix:/tmp/.x11-unix -e DISPLAY=$DISPLAY -e GDK_SCALE -e GDK_DPI_SCALE -p 9022:22 {image_id} /bin/bash
 ```
 > Important: The 'ws' is the docker volume where you should clone and put this repo, so that you can edit code inside the container.
 
