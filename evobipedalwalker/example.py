@@ -6,21 +6,19 @@ def main():
     parser = argparse.ArgumentParser(description=("Robot evo learning."))
     parser.add_argument('--env', 
                         type=str, 
+                        default="easy",
                         help="""
-                        AugmentBipedalWalker,
-                        AugmentBipedalWalkerSmallLegs,
-                        AugmentBipedalWalkerHardcore,
-                        AugmentBipedalWalkerHardcoreSmallLegs,
-                        AugmentAnt
+                        easy,
+                        hard,
                         """)
     args = parser.parse_args()
 
     env = make_env(args.env, render_mode="human")
     env.seed(seed=42)
 
-    if args.env.startswith("AugmentBipedalWalker"):
+    if args.env.startswith("easy"):
         num_param = 8
-    elif args.env.startswith("AugmentAnt"):
+    elif args.env.startswith("hard"):
         num_param = 36
     else:
         print("This agent is undefined")
