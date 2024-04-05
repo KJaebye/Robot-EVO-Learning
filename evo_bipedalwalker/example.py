@@ -1,6 +1,6 @@
 import argparse
 import numpy as np
-from env import make_env
+from make_env import make_env
 
 def main():
     parser = argparse.ArgumentParser(description=("Robot evo learning."))

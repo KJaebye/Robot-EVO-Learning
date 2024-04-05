@@ -1,0 +1,48 @@
+env_name: ant
+agent_specs:
+  batch_design: true
+seed: 1
+
+robot_param_scale: 1
+
+done_condition:
+  max_ang: 60
+
+obs_specs:
+  attr: ['depth']
+  sim: []
+  design: true
+  clip_qvel: true
+  use_projected_params: true
+  use_body_ind: true
+max_body_depth: 4
+
+add_body_condition:
+  max_nchild: 2
+
+robot:
+  param_mapping: sin
+  no_root_offset: true
+  
+  body_params:
+    offset:
+      type: 'xy'
+      lb: [-0.5, -0.5]
+      ub: [0.5, 0.5]
+
+  joint_params: {}
+
+  geom_params:
+    size:
+      lb: 0.03
+      ub: 0.10
+    ext_start:
+      lb: 0.0
+      ub: 0.2
+
+  actuator_params:
+    gear:
+      lb: 20
+      ub: 400
+  
+

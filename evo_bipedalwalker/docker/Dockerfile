@@ -1,6 +1,6 @@
-# @ description: Dockerfile for EMAT (Embodied Multi-Agent Task)
-# @ author: Kangyao Huang
-# @ date: Apirl.21.2023
+# @description: Dockerfile for evo bipedalwalker
+# @author: Kangyao Huang
+# @date: Apirl.21.2023
 
 FROM nvidia/opengl:1.0-glvnd-runtime-ubuntu20.04 as glvnd
 
@@ -76,7 +76,7 @@ RUN echo '# startup run \n\
       /root/start_ssh.sh \n\
   fi' >> /root/.bashrc
 
-# EMAT python env.
+# python env.
 WORKDIR /root/
 COPY requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple

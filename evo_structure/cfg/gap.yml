@@ -1,0 +1,48 @@
+env_name: gap
+agent_specs:
+  batch_design: true
+seed: 1
+
+robot_param_scale: 1
+
+done_condition:
+  max_ang: 20
+  min_height: 1.0
+
+obs_specs:
+  attr: ['depth']
+  sim: []
+  design: true
+  clip_qvel: true
+  use_projected_params: true
+  use_body_ind: true
+max_body_depth: 4
+
+reward_specs:
+  alive_bonus: 0.1
+
+robot:
+  param_mapping: sin
+  
+  body_params:
+    offset:
+      type: 'xz'
+      lb: [-0.5, -0.5]
+      ub: [0.5, 0.5]
+
+  joint_params: {}
+
+  geom_params:
+    size:
+      lb: 0.03
+      ub: 0.08
+    ext_start:
+      lb: 0.0
+      ub: 0.5
+
+  actuator_params:
+    gear:
+      lb: 20
+      ub: 400
+
+  

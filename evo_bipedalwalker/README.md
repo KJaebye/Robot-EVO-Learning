@@ -1,7 +1,7 @@
 # Evo BipedalWalker
-The task is training a Bipedalwalker to learn control and evolve its morph for better control.
+The task is to train a Bipedalwalker to learn control and evolve its morph for better performance.
 
-Two difficulties of tasks are provided:
+Two levels of difficulty of tasks are provided:
 1. easy: training a Bipedalwalker on flat.
 2. hard: training a Bipedalwalker on rough terrain.
 
@@ -26,8 +26,8 @@ To realize graphic display by using X11 forwarding, we provide two methods: VSco
 
 Build dockerfile firstly.
 ```
-cd evobipedalwalker/docker
-docker build -t 'evo-bipedalwalker:v1' . 
+cd evo_bipedalwalker/docker
+docker build -t 'evo-bipedalwalker:latest' . 
 ```
 Get the **image_id**.
 
@@ -35,7 +35,7 @@ Get the **image_id**.
 Run the image, make sure the volume is mounted.
 ```
 xhost +
-docker run -it --name evo-bipedalwalker -v ws:/root/ws {image_id} /bin/bash
+docker run -it --name evo-bipedalwalker --gpus all -v ws:/root/ws {image_id} /bin/bash
 docker start evo-bipedalwalker
 ```
 > Note: Replace the {image_id} with the **image_id** in the last step.
@@ -74,3 +74,12 @@ ENVNAME={
     "easy",
     "hard"
 } ("easy" by default)
+
+## Possible References
+```
+Ha, David. "Reinforcement learning for improving agent design." Artificial life 25.4 (2019): 352-365.
+
+Yuan, Ye, et al. "Transform2act: Learning a transform-and-control policy for efficient agent design." arXiv preprint arXiv:2110.03659 (2021).
+
+Schaff, Charles, et al. "Jointly learning to construct and control agents using deep reinforcement learning." 2019 international conference on robotics and automation (ICRA). IEEE, 2019.
+```

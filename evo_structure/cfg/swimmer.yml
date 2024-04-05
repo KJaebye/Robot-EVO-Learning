@@ -1,0 +1,44 @@
+env_name: swimmer
+agent_specs:
+  batch_design: true
+seed: 1
+
+robot_param_scale: 1
+
+done_condition: {}
+
+obs_specs:
+  attr: ['depth']
+  sim: []
+  design: true
+  clip_qvel: true
+  use_projected_params: true
+  use_body_ind: true
+max_body_depth: 4
+
+
+robot:
+  param_mapping: sin
+  
+  body_params:
+    offset:
+      type: 'xy'
+      lb: [-1.5, -1.5]
+      ub: [1.5, 1.5]
+
+  joint_params: {}
+
+  geom_params:
+    size:
+      lb: 0.06
+      ub: 0.20
+    ext_start:
+      lb: 0.0
+      ub: 0.2
+
+  actuator_params:
+    gear:
+      lb: 20
+      ub: 300
+
+  
